@@ -1,11 +1,9 @@
-// TODO: write code here
+import Cells from './cells';
 
-// comment this to pass build
-const unusedVariable = 'variable';
+const field = document.getElementById('field');
 
-// for demonstration purpose only
-export default function demo(value) {
-  return value;
-}
+const cellsField = new Cells(4, 4, field);
 
-console.log('app.js included');
+cellsField.create();
+cellsField.goStartPosition();
+cellsField.startRandom();
