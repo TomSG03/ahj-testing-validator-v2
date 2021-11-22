@@ -1,3 +1,5 @@
+import goblinImg from '../img/goblin.png';
+
 export default class Cells {
   constructor(x, y, parent) {
     this.x = x;
@@ -8,8 +10,6 @@ export default class Cells {
       width: Math.round(this.parent.offsetWidth / x) - 6,
       height: Math.round(this.parent.offsetHeight / y) - 6,
     };
-    this.cells = document.getElementsByClassName('cells');
-    this.goblin = document.querySelector('[data-busy=goblin]');
   }
 
   create() {
@@ -20,11 +20,19 @@ export default class Cells {
       block.style.height = `${this.cell.height}px`;
       this.parent.append(block);
     }
-  }
 
-  goStartPosition() {
+    this.cells = document.getElementsByClassName('cells');
+
+    const evilGoblin = document.createElement('img');
+    evilGoblin.src = goblinImg;
+    evilGoblin.alt = 'Goblin';
+    evilGoblin.style.width = `${this.cell.width - 5}px`;
+    evilGoblin.style.height = `${this.cell.height - 5}px`;
+    evilGoblin.dataset.busy = 'goblin';
     const pos = this.getPos(0);
-    this.cells[pos].appendChild(this.goblin);
+    this.cells[pos].appendChild(evilGoblin);
+
+    this.goblin = document.querySelector('[data-busy=goblin]');
   }
 
   getPos(old) {
