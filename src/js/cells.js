@@ -1,15 +1,24 @@
 import goblinImg from '../img/goblin.png';
+import Control from './control';
 
 export default class Cells {
-  constructor(x, y, parent) {
+  constructor(x, y, parent, time) {
     this.x = x;
     this.y = y;
     this.count = x * y;
     this.parent = parent;
+    this.time = time;
     this.cell = {
       width: Math.round(this.parent.offsetWidth / x) - 6,
       height: Math.round(this.parent.offsetHeight / y) - 6,
     };
+    this.init();
+    this.controlGame = new Control(5, parent);
+  }
+
+  init() {
+    this.createCells();
+    this.createFigure();
   }
 
   createCells() {
@@ -50,11 +59,18 @@ export default class Cells {
     return Math.floor(Math.random() * this.count);
   }
 
-  startRandom() {
-    setInterval(() => {
+  startMove() {
+    const timer = setInterval(() => {
       const old = Array.from(this.cells).findIndex((item) => item.firstChild !== null);
+      if (old !== -1) {
+        this.controlGame.miss();
+        if (this.controlGame.hitGoblin === 5) {
+          clearInterval(timer);
+          alert('You lost!!!');
+        }
+      }
       const next = this.getPos(old);
       this.cells[next].appendChild(this.goblin);
-    }, 2000);
+    }, this.time);
   }
 }
