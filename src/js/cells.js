@@ -12,7 +12,7 @@ export default class Cells {
     };
   }
 
-  create() {
+  createCells() {
     for (let index = 0; index < this.count; index += 1) {
       const block = document.createElement('div');
       block.className = 'cells';
@@ -22,7 +22,9 @@ export default class Cells {
     }
 
     this.cells = document.getElementsByClassName('cells');
+  }
 
+  createFigure() {
     const evilGoblin = document.createElement('img');
     evilGoblin.src = goblinImg;
     evilGoblin.alt = 'Goblin';
