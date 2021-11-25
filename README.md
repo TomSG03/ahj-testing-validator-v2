@@ -3,3 +3,5 @@
 ## [Домашнее задание к лекции «Обработка событий»](https://github.com/TomSG03/ahj-homeworks/tree/simplification/events)
 
 - [x] Игра с гоблинами
+
+[![CircleCI](https://circleci.com/gh/TomSG03/ahj-event-goblin/tree/main.svg?style=svg)](https://circleci.com/gh/TomSG03/ahj-event-goblin/tree/main)
