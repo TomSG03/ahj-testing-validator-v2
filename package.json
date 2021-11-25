@@ -21,7 +21,7 @@
   },
   "author": "coursar",
   "license": "MIT",
-  "homepage": "https://github.com/TomSG03/ahj-dom-move",
+  "homepage": "https://github.com/TomSG03/ahj-event-goblin",
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
