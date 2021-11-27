@@ -9,18 +9,26 @@
 </head>
 
 <body>
-  <main>
-    <div class="info" id="info">
-      <div class="gamer">
-        <span id="user">User: 0</span>
-      </div>
-      <div class="gamer">
-        <span id="goblin">Goblin: 0</span>
+  <div class="validator" id="validator">
+    <div class="cards-box">
+      <img src="./img/visa.png" class="card invalid" data-card="visa" alt="">
+      <img src="./img/mastercard.png" class="card invalid" data-card="masterCard" alt="">
+      <img src="./img/discover.png" class="card invalid" data-card="discover" alt="">
+      <img src="./img/jcb.png" class="card invalid" data-card="jcb" alt="">
+      <img src="./img/american_express.png" class="card invalid" data-card="amExpress" alt="">
+      <img src="./img/mir.png" class="card invalid" data-card="mir" alt="">
+    </div>
+    <div class="input-box">
+      <input type="text" class="input">
+      <div class="validate">
+        <span class="checkButton">Click to Validate</span>
       </div>
     </div>
-    <div class="field" id="field">
+    <div class="message-box">
+      <span class="message">
+      </span>
     </div>
-  </main>
+  </div>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
-import Cells from './cells';
+import Validator from './validator';
 
-const field = document.getElementById('field');
+const validDom = document.getElementById('validator');
 
-const cellsField = new Cells(4, 4, field, 1000);
-cellsField.startMove();
+const valid = new Validator(validDom);
+valid.check();
