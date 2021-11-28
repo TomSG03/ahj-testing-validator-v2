@@ -18,10 +18,10 @@ jobs:
       - run:
           name: Run eslint
           command: yarn lint
-      # - run:
-      #     name: Run e2e 
-      #     command: yarn e2e
-      # - run:
+      - run:
+          name: Run test 
+          command: yarn test
+      - run:
       #     name: Create gh-pages
       #     command: |
       #       git subtree split --prefix dist -b gh-pages
