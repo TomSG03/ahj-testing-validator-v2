@@ -19,8 +19,8 @@ jobs:
           name: Run eslint
           command: yarn lint
       - run:
-          name: Run tests
-          command: yarn test
+          name: Run e2e 
+          command: yarn e2e
       # - run:
       #     name: Create gh-pages
       #     command: |
